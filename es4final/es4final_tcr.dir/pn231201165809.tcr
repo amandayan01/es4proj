@@ -1,0 +1,15 @@
+#Start recording tcl command: 12/1/2023 16:11:29
+#Project Location: Z:/es4final; Project name: es4final
+prj_open "Z:/es4final/es4final.rdf"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_add_source "Z:/es4final/mypll/mypll.ipx"
+prj_run Export -impl impl_1
+launch_programmer_prj "C:/lscc/radiant/2023.1"
+prj_enable_source "Z:/es4final/source/impl_1/NEScontroller.vhd"
+prj_run Synthesis -impl impl_1
+prj_save 
+prj_close
+#Stop recording: 12/1/2023 16:58:09
