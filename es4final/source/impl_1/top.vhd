@@ -57,6 +57,16 @@ architecture synth of top is
 	);
 	end component;
 	
+	component character is
+		port(
+        controller_ins : in std_logic_vector(7 downto 0);
+        positionXin : in unsigned(9 downto 0);
+        positionYin : in unsigned(9 downto 0);
+        positionXout : out unsigned(9 downto 0):= 10b"0";
+        positionYout : out unsigned(9 downto 0):= 10b"0"
+		);
+	end component;
+	
 	-- clock signals
 	signal int25clk : std_logic;
 	signal int60clk : std_logic;
@@ -73,4 +83,5 @@ begin
 	pll : mypll port map(ref_clk_i => ext12clk, rst_n_i => '1', outcore_o => test_out, outglobal_o => int25clk);
 	myvga : vga port map(int25clk, HSYNC, VSYNC, row, col, valid);
 	pg : pattern_gen port map(int60clk, row, col, valid, rgb);
+	my_chararcter : character port map(controller_ins => nes_outs);
 end;
