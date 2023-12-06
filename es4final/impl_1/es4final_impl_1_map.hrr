@@ -1,0 +1,60 @@
+---------------------------------------------------
+Report for cell top
+   Instance path: top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       9.00        100.0
+                                  LUT4	       4305        100.0
+                               LUTGATE	       2341        100.0
+                                LUTCCU	       1964        100.0
+                                 IOREG	          9        100.0
+                                 IOBUF	         21        100.0
+                                PFUREG	         85        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                         NEScontroller	          1         0.6
+                                 mypll	          1         0.0
+                           pattern_gen	          1        95.0
+                                   vga	          1         1.0
+---------------------------------------------------
+Report for cell pattern_gen
+   Instance path: top/pg
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	       4089        95.0
+                               LUTGATE	       2167        92.6
+                                LUTCCU	       1922        97.9
+                                PFUREG	         31        36.5
+---------------------------------------------------
+Report for cell mypll
+   Instance path: top/pll
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")	          1         0.0
+---------------------------------------------------
+Report for cell mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")
+   Instance path: top/pll/lscc_pll_inst
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+---------------------------------------------------
+Report for cell vga
+   Instance path: top/myvga
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         42         1.0
+                               LUTGATE	         18         0.8
+                                LUTCCU	         24         1.2
+                                PFUREG	         20        23.5
+---------------------------------------------------
+Report for cell NEScontroller
+   Instance path: top/nes_control
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       9.00        100.0
+                                  LUT4	         24         0.6
+                               LUTGATE	          6         0.3
+                                LUTCCU	         18         0.9
+                                 IOREG	          9        100.0
+                                PFUREG	         34        40.0

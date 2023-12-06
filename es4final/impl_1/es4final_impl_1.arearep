@@ -1,0 +1,66 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  85 of 5280 (1.610%)
+I/O cells:      21
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2       982          100.0
+                            FD1P3XZ        85          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         2          100.0
+                              IOL_B         9          100.0
+                               LUT4      2323          100.0
+                                 OB        19          100.0
+                              PLL_B         1          100.0
+SUB MODULES
+                      NEScontroller         1
+                              mypll         1
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                        pattern_gen         1
+                                vga         1
+                              TOTAL      3427
+----------------------------------------------------------------------
+Report for cell pattern_gen.v1
+Instance Path : pg
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2       961           97.9
+                            FD1P3XZ        31           36.5
+                               LUT4      2274           97.9
+                              TOTAL      3266
+----------------------------------------------------------------------
+Report for cell mypll.v1
+Instance Path : pll
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+SUB MODULES
+mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")         1
+                              TOTAL         2
+----------------------------------------------------------------------
+Report for cell mypll_ipgen_lscc_pll(DIVR="0",DIVF="66",DIVQ="5",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000").v1
+Instance Path : pll.lscc_pll_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              PLL_B         1          100.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell vga.v1
+Instance Path : myvga
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        12            1.2
+                            FD1P3XZ        20           23.5
+                               LUT4        18            0.8
+                              TOTAL        50
+----------------------------------------------------------------------
+Report for cell NEScontroller.v1
+Instance Path : nes_control
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2         9            0.9
+                            FD1P3XZ        34           40.0
+                         HSOSC_CORE         1          100.0
+                              IOL_B         9          100.0
+                               LUT4         6            0.3
+                              TOTAL        59
