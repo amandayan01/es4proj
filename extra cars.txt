@@ -1,0 +1,56 @@
+Here's a snippet incorporating these changes (assuming car4 and car5 have not been declared yet):
+
+```vhdl
+-- Car 4
+signal car4_top : unsigned(9 downto 0) := 10d"125"; -- Set the starting Y position for car 4
+signal car4_left : unsigned(9 downto 0) := 10d"100"; -- Set the starting X position for car 4
+signal car4_collided : std_logic;
+
+-- Car 5
+signal car5_top : unsigned(9 downto 0) := 10d"165"; -- Set the starting Y position for car 5
+signal car5_left : unsigned(9 downto 0) := 10d"200"; -- Set the starting X position for car 5
+signal car5_collided : std_logic;
+```
+
+Modify the `process(clk60)` block to include motion updates for car4 and car5, setting unique speeds for each one:
+
+```vhdl
+process(clk60) begin
+	if rising_edge(clk60) then 
+		car0_left <= (car0_left + 1) mod 640;
+		car1_left <= (car1_left + 1) mod 640;
+		car2_left <= (car2_left + 3) mod 640;
+		car3_left <= (car3_left - 3) mod 640;
+
+		-- Adding motion for car4 and car5 with different speeds
+		car4_left <= (car4_left + 2) mod 640; -- Speed for car 4
+		car5_left <= (car5_left - 2) mod 640; -- Speed for car 5 (moving in the opposite direction)
+	end if;
+end process;
+```
+
+Also, remember to incorporate collision detection for the new cars:
+
+```vhdl
+car4_collision : collisions port map(player_x, player_y, car4_left, car4_top, car4_collided);
+car5_collision : collisions port map(player_x, player_y, car5_left, car5_top, car5_collided);
+```
+
+In the drawing process, you’ll need to add cases to draw cars 4 and 5 similar to the existing cases for car0 to car3:
+
+```vhdl
+-- Horizontal motion of cars
+-- (Existing car conditions unchanged)
+
+-- New car4 condition
+elsif (((row >= car4_top) and (row <= car4_top + car_height)) and ((col >= (car4_left)) and (col <= (car4_left + car_width)))) then
+	rgb <= "010101"; -- Custom color code for car4
+
+-- New car5 condition
+elsif (((row >= car5_top) and (row <= car5_top + car_height)) and ((col >= (car5_left)) and (col <= (car5_left + car_width)))) then
+	rgb <= "101010"; -- Custom color code for car5
+
+-- (Rest of the conditions unchanged)
+```
+
+Ensure that you define `car4_top`, `car4_left`, `car4_collided`, `car5_top`, `car5_left`, and `car5_collided` signals, map them correctly in the `architecture` section, and add them to the drawing logic. Adjust the starting positions (`car4_top`, `car4_left`, `car5_top`, `car5_left`) and colors (`rgb`) appropriately for the display.
